@@ -1,0 +1,69 @@
+body{
+    font-family: 'Inconsolata', monospace;
+    background-color: #f8edeb;
+    font-size: 1rem;
+}
+
+@media (max-width: 1200px) {
+    body {
+      font-size: calc(1rem + 0.5vw);
+    }
+}
+
+.form-control{
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-radius: 0px;
+    background-color: #fae1dd;
+    color: #303030 !important;
+}
+
+.form-control:focus{
+    background-color: #fae1dd;
+}
+.footer{
+    position: absolute;
+    height: 3.5%;
+    bottom: 0%;
+    left: 0%;
+    width: 100%;
+    background-color: #fcd5ce;
+    text-align: center;
+}
+
+html{ 
+    overflow-y: hidden; 
+}
+
+@keyframes spin {
+    from{
+    transform: rotateY(0deg);
+    moz-transform: rotateY(0deg);
+    ms-transform: rotateY(0deg); 
+    }
+    to{
+    transform: rotateY(360deg);
+    moz-transform: rotateY(360deg); 
+    ms-transform: rotateY(360deg); 
+    }
+   }
+   @-webkit-keyframes spin{
+    from{-webkit-transform: rotateY(0deg);}
+    to{-webkit-transform: rotateY(360deg);}
+}
+.image{
+    animation-name: spin;
+    transform-style: preserve-3d;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-duration: 7s;
+    -webkit-animation-name: spin;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-duration: 7s;
+}
+
+::placeholder{
+    color: #303030 !important;
+}
