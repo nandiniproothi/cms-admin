@@ -1,7 +1,66 @@
 <html>
+    <head>
+    <link rel = "icon" href = "../img/favicon.ico" type = "image/x-icon"> 
+    <title>✨go away✨</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    </head>
     <body>
-        sorry buddy, this ain't for you :(
+        <p>sorry buddy, this ain't for you :(</p>
+        <img height="50px" width="auto" src="https://images-ext-2.discordapp.net/external/EtlaC_XDj93m1jYWnAmanjl8IofIk_KiJ_jKj8iMOOw/https/cdn.weeb.sh/images/SJ2fc44YM.jpeg" title="here you go though :D">
+        <footer>
+            made with <img src="../img/8heart.png" class="image" height="18px" width="auto"> by 👉🏾<a href="https://github.com/nandiniproothi">smol</a>👈🏾
+        </footer>
     </body>
+    <style>
+    body{
+        font-family: 'Inconsolata', monospace;
+        background-color: #f8edeb;
+        font-size: 1rem;
+    }
+    footer{
+    position: absolute;
+    height: 3.5%;
+    bottom: 0%;
+    left: 0%;
+    width: 100%;
+    background-color: #fcd5ce;
+    text-align: center;
+}
+
+html{ 
+    overflow-y: hidden; 
+}
+
+@keyframes spin {
+    from{
+    transform: rotateY(0deg);
+    moz-transform: rotateY(0deg);
+    ms-transform: rotateY(0deg); 
+    }
+    to{
+    transform: rotateY(360deg);
+    moz-transform: rotateY(360deg); 
+    ms-transform: rotateY(360deg); 
+    }
+   }
+   @-webkit-keyframes spin{
+    from{-webkit-transform: rotateY(0deg);}
+    to{-webkit-transform: rotateY(360deg);}
+}
+.image{
+    animation-name: spin;
+    transform-style: preserve-3d;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-duration: 7s;
+    -webkit-animation-name: spin;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-duration: 7s;
+}
+
+    </style>
     <script>
         console.log("yeah, go away please :D");
     </script>
