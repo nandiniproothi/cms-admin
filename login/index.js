@@ -12,7 +12,7 @@ function googleSignIn() {
         console.log(user.displayName);
         console.log(user.email);
         console.log(user.uid);
-        if(user.email == "nandiniproothi@gmail.com"){
+        if(user.email.equals("nandiniproothi@gmail.com")){
             window.location.replace("../dashboard/index.html")
         }
         //saving userid in localstorage so that we can use it any where
