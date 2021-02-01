@@ -10,14 +10,18 @@ body{
     }
 }
 
-
 .form-control{
     border-top: none;
     border-left: none;
     border-right: none;
     border-radius: 0px;
+    background-color: #fae1dd;
+    color: #303030 !important;
 }
 
+.form-control:focus{
+    background-color: #fae1dd;
+}
 .footer{
     position: absolute;
     height: 3.5%;
@@ -47,9 +51,10 @@ html{
    @-webkit-keyframes spin{
     from{-webkit-transform: rotateY(0deg);}
     to{-webkit-transform: rotateY(360deg);}
-   }
-   .image{
+}
+.image{
     animation-name: spin;
+    transform-style: preserve-3d;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
     animation-duration: 7s;
@@ -57,4 +62,8 @@ html{
     -webkit-animation-timing-function: linear;
     -webkit-animation-iteration-count: infinite;
     -webkit-animation-duration: 7s;
-   }
+}
+
+::placeholder{
+    color: #303030 !important;
+}
