@@ -12,13 +12,14 @@ function googleSignIn() {
         console.log(user.displayName);
         console.log(user.email);
         console.log(user.uid);
-        if(user.email != "nandiniproothi@gmail.com" || user.email != ""){
-            console.log("sry");
-            window.location.replace("../sry.html");
+        if(user.email == "nandiniproothi@gmail.com"){
+            window.location.replace("../dashboard/")
+            
         }
         //saving userid in localstorage so that we can use it any where
         else{
-            window.location.replace("../dashboard/")
+            console.log("sry");
+            window.location.replace("../sry.html");
         }
 
         // ...
