@@ -13,8 +13,7 @@ function googleSignIn() {
         console.log(user.email);
         console.log(user.uid);
         if(user.email == "nandiniproothi@gmail.com"){
-            window.location.replace("../dashboard/")
-            
+            window.location.replace("../dashboard/index.html")
         }
         //saving userid in localstorage so that we can use it any where
         else{
