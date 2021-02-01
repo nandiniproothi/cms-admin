@@ -1,5 +1,7 @@
+//heya, how you doing?😳
+
 function forgotPassword(){
-    document.getElementById("emailHelp").innerHTML = "please check your email!"
+    document.getElementById("emailHelp").innerHTML = "please check your email!" //once the user taps on "forget password," the text is changed
 }
 
 function googleSignIn() {
@@ -12,13 +14,12 @@ function googleSignIn() {
         console.log(user.displayName);
         console.log(user.email);
         console.log(user.uid);
-        if(user.email.equals("nandiniproothi@gmail.com")){
+        if(user.email.equals("nandiniproothi@gmail.com")){ //crap, now you know my email. anyway, only i'm allowed to login :D
             window.location.replace("../dashboard/index.html")
         }
-        //saving userid in localstorage so that we can use it any where
         else{
             console.log("sry");
-            window.location.replace("../sry.html");
+            window.location.replace("../sry.html"); //looks like you ain't authorised buddy
         }
 
         // ...
@@ -33,7 +34,6 @@ function googleSignIn() {
         // ...
     });
 }
-//Signin with Google ends
 
 function emailSignIn(){
     var email = document.getElementById('exampleInputEmail1');
@@ -51,6 +51,6 @@ function emailSignIn(){
   });
     }
     else{
-        window.location.replace("../sry.html");
+        window.location.replace("../sry.html"); //similar to google signin. and oops, you're still not authorised!
     }
 }
