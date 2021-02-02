@@ -14,7 +14,7 @@ function googleSignIn() {
         console.log(user.displayName);
         console.log(user.email);
         console.log(user.uid);
-        if(user.email.equals("nandiniproothi@gmail.com")){ //crap, now you know my email. anyway, only i'm allowed to login :D
+        if(user.email.equals("nandiniproothi@gmail.com") || user.email.equals("dimpleluvspeace@gmail.com") || user.email.equals("dimple.parmar@outlook.com")){ //crap, now you know my email. anyway, only i'm allowed to login :D
             window.location.replace("../dashboard/index.html")
         }
         else{

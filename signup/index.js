@@ -2,7 +2,7 @@
 function emailSignUp(){
     var email = document.getElementById('exampleInputEmail1');
     var password = document.getElementById('exampleInputPassword1');
-    if(email == "nandiniproothi@gmail.com" || email == ""){
+    if(user.email.equals("nandiniproothi@gmail.com") || user.email.equals("dimpleluvspeace@gmail.com") || user.email.equals("dimple.parmar@outlook.com")){
         firebase.auth().createUserWithEmailAndPassword(email, password)
   .then((userCredential) => {
     // Signed in 
