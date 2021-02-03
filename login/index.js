@@ -14,10 +14,9 @@ function googleSignIn() {
         console.log(user.displayName);
         console.log(user.email);
         console.log(user.uid);
-        console.log(String.Equals(user.email, "nandiniproothi@gmail.com", StringComparison.InvariantCultureIgnoreCase));
-        if(String.Equals(user.email, "nandiniproothi@gmail.com", StringComparison.InvariantCultureIgnoreCase)){ //crap, now you know my email. anyway, only i'm allowed to login :D
+        if(user.email == "nandiniproothi@gmail.com" || user.email =="dimpleluvspeace@gmail.com"){ //crap, now you know my email. anyway, only i'm allowed to login :D
             console.log("sup");
-            window.location.replace("https://nandiniproothi.github.io/cms-admin/dashboard/index.html");
+            window.location.replace("../dashboard/");
         }
         else{
             console.log("sry");

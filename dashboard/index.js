@@ -1,10 +1,21 @@
-function previewCard(){
+function authCheck(){
+  firebase.auth().onAuthStateChanged(function(user) {
+    if (user && (user.email == "nandiniproothi@gmail.com" || user.email == "dimpleluvspeace@gmail.com")) {
+      console.log(user.email);// User is signed in.
+    } else {
+      // No user is signed in.
+      console.log('WHO THE FUCK ARE YOU?');
+      window.location.replace("../sry.html");
+    }
+  });
+}
+function previewCard() {
 
 }
 
 var n = 0;
 
-function addProj(){
+function addProj() {
   console.log(n);
   var i = n;
   let html = '';
@@ -25,6 +36,13 @@ function addProj(){
                       <label for="exampleFormControlFile1">preview image goes here</label>
                       <input type="file" class="form-control-file" id="form-file${i}" accept="image/*">
                     </div>
+                    <div class="progress">
+                      <div class="progress-bar progress-bar-striped active-bar" id="pbar${i}" role="progressbar" aria-valuenow="0"
+                      aria-valuemin="0" aria-valuemax="100" style="width:0%">
+                        70%
+                      </div>
+                    </div>
+                    <br>
                     <form>
                         <div class="form-group">
                           <input type="text" class="form-control" id="form-title${i}" placeholder="project title goes here">
@@ -42,45 +60,47 @@ function addProj(){
     </div>
     <br>
     `;
-    
-    html += x;
-    document.getElementById('place-card').innerHTML += html;
-    n++;
-    
+
+  html += x;
+  document.getElementById('place-card').innerHTML += html;
+  n++;
+
 }
 
 /*
-const fileInput = document.getElementById(`form-file${i}`);
-    fileInput.onchange = () => {
-      const selectedFile = fileInput.files[0];
-      console.log(selectedFile);
-    }
+
 */
 
-function pushWeb(){
-    console.log("total:" + n);
-    //perform something
-    var i;
-    for(i=0;i<n;i++){
-      console.log("i is: " + i);
+function pushWeb() {
+  console.log("total:" + n);
+  //perform something
+  var i;
+  for (i = 0; i < n; i++) {
+    console.log("i is: " + i);
+    const fileInput = document.getElementById(`form-file${i}`);
+    file = fileInput.files[0];
+    fileName = file.name;
+    storageRef = firebase.storage().ref(fileName);
+    uploadTask = storageRef.put(file);
+    document.getElementById(`pbar${i}`).style.width = uploadTask.status;
     var title = document.getElementById(`form-title${i}`).value;
     var link = document.getElementById(`form-link${i}`).value;
     var desc = document.getElementById(`form-desc${i}`).value;
     var newRef = db.collection("projects").doc();
     console.log(title + link + desc);
     newRef.set({
-        title: title, 
-        link: link, 
-        desc: desc,
+      title: title,
+      link: link,
+      desc: desc,
     })
-    .then(function() {
+      .then(function () {
         console.log("Document successfully written!");
-    })
-    .catch(function(error) {
+      })
+      .catch(function (error) {
         console.error("Error writing document: ", error);
-    });
-    }
-    document.getElementById('pushWeb').style.display= "none";
-    document.getElementById('pushWebSuccess').style.display = "block";
+      });
+  }
+  document.getElementById('pushWeb').style.display = "none";
+  document.getElementById('pushWebSuccess').style.display = "block";
 }
 
