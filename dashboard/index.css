@@ -10,12 +10,13 @@ body{
     }
 }
 
-.card{
+#card{
+    padding-left: 10px;
     border-radius: 15px;
     border: none;
 }
 
-.card-img-top{
+#card-img-top{
     border-radius: 15px 15px 0px 0px;
     object-fit: cover;
 }
